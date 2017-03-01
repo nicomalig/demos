@@ -7,7 +7,7 @@ library(ggplot2)
 data(api)
 
 # How many schools are in the full dataset?
-
+# There are 6194 schools in the data set
 
 # How many districts are there in the dataset (dnum)?
 
@@ -60,13 +60,16 @@ data(api)
 # Here, we sample *districts*, and take all schools in those districts
 
 # Use the `table` function to see which district numbers (dnum) are present in the full dataset
-
+table(apipop$dnum)
+length(unique(apipop$dnum))
 
 # Use the `table` function to see which district numbers are present in apiclus1
-
+table(apiclus1$dnum)
+length(unique(apipop$dnum))
 
 # What is the distribution of person weights in this sample?
-
+hist(apiclus1$pw)
+unique(apiclus1$pw)
 
 # Specify multiple cluster designs: try with/without weights/fpc
 # We need to know the primary sampling unit (id) for each observation

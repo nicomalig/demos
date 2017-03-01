@@ -2,7 +2,7 @@
 
 # Set up 
 library(dplyr)
-setwd('~/Documents/info-498c/demos/gbd/ylls/')
+setwd('/Users/nicomalig/Documents/0- Nico\'s Work/0- Current Schoolwork/INFO 498c/demos/gbd/ylls')
 
 # Set margin spacing for graphics
 par(mar=c(5,4,4,2))
@@ -20,15 +20,17 @@ self.harm.data <- self.harm.data %>%
 ###########################################################################
 
 # Subset the data
+death.data <- self.harm.data %>% filter(Measure == 'Deaths per 100,000')
 
 # Create chart
-
-
+plot(death.data$age.group, death.data$Value)
 
 #######################################################################
 ### Create a plot of the yll rate (ylls per 100K) in each age-group ###
 #######################################################################
 
 # Subset the data
+yll.data <- self.harm.data %>% filter(Measure != 'Deaths per 100,000')
 
 # Create chart
+plot(yll.data$age.group, yll.data$Value)
